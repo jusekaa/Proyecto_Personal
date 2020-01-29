@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>com.view.Home</servlet-class>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Acceso</servlet-name>
+        <servlet-class>com.view.Acceso</servlet-class>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Acceso</servlet-name>
+        <url-pattern>/Acceso/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Presentacion</servlet-name>
+        <servlet-class>com.view.Presentacion</servlet-class>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Presentacion</servlet-name>
+        <url-pattern>/Presentacion</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>Hv</servlet-name>
+        <servlet-class>com.view.Hv</servlet-class>        
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hv</servlet-name>
+        <url-pattern>/Hv</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            5
+        </session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>   
+    <error-page>
+        <error-code>404</error-code>
+        <location>/vasio/404.html</location>
+    </error-page>
+    
+</web-app>

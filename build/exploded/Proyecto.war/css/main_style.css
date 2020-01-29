@@ -1,0 +1,516 @@
+/*==================================================================================
+    Creado por 
+  ____       _               _   _                ____      _                        
+ / ___|  ___| |__   __ _ ___| |_(_) __ _ _ __    / ___|__ _| |__  _ __ ___ _ __ __ _ 
+ \___ \ / _ \ '_ \ / _` / __| __| |/ _` | '_ \  | |   / _` | '_ \| '__/ _ \ '__/ _` |
+  ___) |  __/ |_) | (_| \__ \ |_| | (_| | | | | | |__| (_| | |_) | | |  __/ | | (_| |
+ |____/ \___|_.__/ \__,_|___/\__|_|\__,_|_| |_|  \____\__,_|_.__/|_|  \___|_|  \__,_|
+
+ color que se utlizara #3498DB
+                                                                                     
+======================================================================================*/
+
+
+/*Inicio de las etiquetas de todo el cuerpo de la paguina */
+
+* {
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+:root {
+    --color-1: #21d4fd;
+    --color-2: #bf5dec;
+    --color-3: #3498DB;
+    --color-4: #2af598;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.Header {
+    position: relative;
+    height: 70vh;
+    display: block;
+}
+
+.Header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(19deg, var(--color-1), var(--color-2));
+    -webkit-transform-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    -webkit-transform: skewY(-10deg);
+    transform: skewY(-10deg);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.Header-background::before,
+.Header-background::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 80%;
+    height: 33.333333333333336%;
+    opacity: 0.3;
+    -webkit-filter: blur(15px);
+    filter: blur(15px);
+}
+
+.Header-background::before {
+    background: var(--color-1);
+    right: 0;
+}
+
+.Header-background::after {
+    background: var(--color-2);
+    bottom: 0;
+}
+
+.Header-content {
+    text-align: center;
+    padding: 4rem 4rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 58rem) {
+    .Header-content {
+        text-align: left;
+        padding: 10rem 4rem;
+        max-width: 54rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.Header-hero h1,
+.Header-hero p {
+    color: #fff;
+    text-shadow: 0 0.5rem 1rem rgba(50, 0, 100, 0.1);
+}
+
+.Header-hero h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.Header-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.Header-visuals {
+ 
+    position: relative;
+    margin: 10px;
+    margin-top: 5px;
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+
+@media (min-width: 58rem) {
+    .Header-visuals {
+        margin: 0;
+        -webkit-transform: translateY(-5rem) rotate(-10deg);
+        transform: translateY(-5rem) rotate(-10deg);
+    }
+}
+
+.Button {
+    padding: 1.5rem 2rem;
+    border: 0;
+    color: var(--color-3);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #fff;
+    border-radius: 7px;
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1.75rem 2rem -0.4rem rgba(50, 0, 100, 0.15);
+}
+
+.Button:hover {
+    color: var(--color-4);
+    box-shadow: 0 1.75rem 3rem 0rem rgba(50, 0, 100, 0.1);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.Button:active {
+    box-shadow: 0 1.75rem 2.5rem -0.2rem rgba(50, 0, 100, 0.125);
+    -webkit-transform: scale(1.025);
+    transform: scale(1.025);
+}
+
+.Iphone {
+ 
+    
+}
+
+
+/* Incio de la etiquetas de los grids centrales */
+
+.container {
+    padding: 64px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+}
+
+.column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+}
+
+.large-font {
+    font-size: 48px;
+}
+
+.xlarge-font {
+    font-size: 64px
+}
+
+.button {
+    border-radius: 10%;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    border-radius: 7px;
+}
+
+
+/*Fin de la etiquetas de los grids centrales */
+
+
+/*Incio Conenedor de popup que se mostrara al abrir la paguina*/
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+
+/*Fin Conenedor de popup que se mostrara al abrir la paguina*/
+
+
+/* Incio de las media query para adaptacion a dispositivos */
+
+@media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+        width: 100%;
+        text-align: center;
+    }
+    img {
+        margin: auto;
+    }
+    .Header {
+        position: relative;
+        height: 30vh;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 500px) {}
+
+
+/* Fin de las media query para adaptacion a dispositivos */
+
+
+/* Inicio etiquetas para el boton que lleva arriba toda la pagina*/
+
+#myBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 17px;
+}
+
+
+/* Fin etiquetas para el boton que lleva arriba toda la pagina*/
+
+
+/*Incio etiquetas del footer de las redes sociales*/
+
+.copyright {
+    text-align: center;
+    color: #3498DB;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    max-width: 80px;
+    position: fixed;
+    top: 0;
+    right: 25px;
+}
+
+footer a {
+    text-decoration: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px dashed black;
+    color: #3498DB;
+    margin: 5px;
+}
+
+footer a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+footer a .icons {
+    margin-top: 12px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+
+/*Fin etiquetas del footer de las redes sociales*/
+
+
+/*Incio etiquetas de los cards*/
+
+.bodyy {
+    background-color: white;
+    display: flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    max-width: 90%;
+}
+
+.card--1 .card__img,
+.card--1 .card__img--hover {
+    background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card--2 .card__img,
+.card--2 .card__img--hover {
+    background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card__like {
+    width: 18px;
+}
+
+.card__img {
+    visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card__img--hover {
+    transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+}
+
+.card {
+    margin-right: 25px;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+    background-color: white;
+    width: 33.3%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+
+
+/*Fin etiquetas de los cards*/
